@@ -16,10 +16,8 @@ TODAY=`date +"%Y%m%d"`
 BACKUP=$DIR_PG/"data_"$TODAY
 echo $BACKUP
 
-#sudo cp -f $DIR_PGDATA/postgresql.conf $DIR_WORK
-#sudo cp -f $DIR_PGDATA/pg_hba.conf $DIR_WORK
-#sudo cp -f $DIR_PGDATA/recovery.conf $DIR_WORK
-
+sudo cp -fr $DIR_PGDATA $BACKUP
+chown -R postgres:postgres $BACKUP
 
 for F in postgresql.conf pg_hba.conf recovery.conf
 do
